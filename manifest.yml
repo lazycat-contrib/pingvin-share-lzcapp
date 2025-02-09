@@ -1,0 +1,25 @@
+lzc-sdk-version: "0.1"
+name: Pingvin Share
+package: cloud.lazycat.app.pingvinshare
+version: 0.0.1
+description: 自建文件共享平台
+homepage: https://github.com/stonith404/pingvin-share
+author: stonith404
+application:
+  subdomain: pingvin-share
+  background_task: false
+  multi_instance: false
+  gpu_accel: false
+  kvm_accel: false
+  usb_accel: false
+  routes:
+    - /=http://pingvin-share.cloud.lazycat.app.pingvinshare.lzcapp:3000/
+services:
+  pingvin-share:
+    image: registry.lazycat.cloud/czyt/stonith404/pingvin-share:2e06bb8a1ab565a4
+    environment:
+      -
+      - TRUST_PROXY=false
+    binds:
+      - /lzcapp/var/data:/opt/app/backend/data
+      - /lzcapp/var/img:/opt/app/frontend/public/img

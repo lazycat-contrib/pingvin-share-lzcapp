@@ -1,0 +1,32 @@
+{
+  "name": "Pingvin Share",
+  "package": "cloud.lazycat.app.pingvinshare",
+  "description": "自建文件共享平台",
+  "homepage": "https://github.com/stonith404/pingvin-share",
+  "author": "stonith404",
+  "subdomain": "pingvin-share",
+  "version": "0.0.1",
+  "iconPath": "logo.png",
+  "composePath": "docker-compose.yml",
+  "app_features": [],
+  "unsupported_platforms": [],
+  "lastRouteType": "from_compose",
+  "port_mappings": {
+    "pingvin-share_3000_3000": {
+      "use": true,
+      "type": "http",
+      "path": "/",
+      "targetPath": "/"
+    }
+  },
+  "image_stonith404_pingvin-share": {
+    "originalImage": "stonith404/pingvin-share",
+    "pushTarget": "lazycat",
+    "newImageName": "registry.lazycat.cloud/czyt/stonith404/pingvin-share:2e06bb8a1ab565a4",
+    "timestamp": "2025-02-09T09:27:01.771Z"
+  },
+  "pingvin-share_volume_/opt/app/backend/data_action": "emptyDir",
+  "pingvin-share_volume_/opt/app/backend/data_location": "app_data",
+  "pingvin-share_volume_/opt/app/frontend/public/img_action": "emptyDir",
+  "pingvin-share_volume_/opt/app/frontend/public/img_location": "app_data"
+}
