@@ -1,0 +1,15 @@
+application:
+  subdomain: pingvin-share
+  upstreams:
+    - location: /
+      backend: http://pingvin-share:3000/
+
+services:
+  pingvin-share:
+    # upstream: stonith404/pingvin-share:v1.13.0
+    image: docker.1ms.run/stonith404/pingvin-share:v1.13.0
+    environment:
+      - TRUST_PROXY=false
+    binds:
+      - /lzcapp/var/data:/opt/app/backend/data
+      - /lzcapp/var/img:/opt/app/frontend/public/img

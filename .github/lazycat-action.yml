@@ -1,0 +1,40 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: .lazycat-build/pingvinshare.lpk
+  target_arch: amd64
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: pingvin-share
+
+build:
+  run_buildscript: false
+
+images:
+  # 主应用：上游 stonith404/pingvin-share 有完整三段 SemVer tag 家族（v1.x.y），排除 latest 等别名
+  - id: pingvin-share
+    target: service
+    service: pingvin-share
+    source: stonith404/pingvin-share
+    channel: stable
+    sort: semver
+    tag_regex: '^v?\d+\.\d+\.\d+$'
+    delivery:
+      mode: mirror
+
+stores:
+  official:
+    # Official store publication is intentionally disabled; publish only to Miaomiao Store.
+    enabled: false
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: Pingvin Share
+    summary: "自建文件共享平台"

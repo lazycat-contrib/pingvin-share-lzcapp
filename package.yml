@@ -1,0 +1,14 @@
+package: cloud.lazycat.app.pingvinshare
+version: 0.0.1
+name: Pingvin Share
+description: "自建文件共享平台"
+min_os_version: "1.5.0"
+homepage: https://github.com/stonith404/pingvin-share
+author: stonith404
+locales:
+  zh:
+    name: Pingvin Share
+    description: "自建文件共享平台"
+  en:
+    name: Pingvin Share
+    description: "Self-hosted file sharing platform"
