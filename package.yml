@@ -1,5 +1,5 @@
 package: cloud.lazycat.app.pingvinshare
-version: 0.0.1
+version: 1.13.0
 name: Pingvin Share
 description: "自建文件共享平台"
 min_os_version: "1.5.0"
